@@ -13,10 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\linked list">
+      <UniqueIdentifier>{f2285003-8421-47e2-a44d-da8a4b75b1bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\linked list">
+      <UniqueIdentifier>{838e05e2-9884-4c3f-b41e-71fda3b90901}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data structure\linked list\source\linked list.cpp">
+      <Filter>Source Files\linked list</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="data structure\linked list\linked list Solution.h">
+      <Filter>Header Files\linked list</Filter>
+    </ClInclude>
+    <ClInclude Include="data structure\linked list\linked list.h">
+      <Filter>Header Files\linked list</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
