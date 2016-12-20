@@ -19,6 +19,9 @@
     <Filter Include="Source Files\linked list">
       <UniqueIdentifier>{838e05e2-9884-4c3f-b41e-71fda3b90901}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Assert">
+      <UniqueIdentifier>{e15d3e30-11f8-4717-b384-0e9e4e24a3fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -34,6 +37,9 @@
     </ClInclude>
     <ClInclude Include="data structure\linked list\linked list.h">
       <Filter>Header Files\linked list</Filter>
+    </ClInclude>
+    <ClInclude Include="general\Assert.h">
+      <Filter>Header Files\Assert</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
