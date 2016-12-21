@@ -1,3 +1,4 @@
+/*
 #include <data structure\linked list\linked list.h>
 #include <data structure\node\node.h>
 #include <general\Assert.h>
@@ -9,7 +10,7 @@ void LinkedList::inseret_node(int i_key)
 {
 	Node* new_Node = new Node(i_key);
 	ASSERT(new_Node);
-	
+
 	if (m_pRoot == nullptr)
 	{
 		m_pRoot = new_Node;
@@ -45,7 +46,7 @@ void LinkedList::inseret_node(int i_key)
 			new_Node->pNext = nullptr;
 			return;
 		}
-			
+
 	}
 }
 
@@ -66,7 +67,7 @@ bool LinkedList::delete_node(int i_key)
 			m_pRoot = this_Node->pNext;
 
 			printf("Delete: %d\n", this_Node->m_data);
-			
+
 			delete this_Node;
 			return true;
 		}
@@ -177,7 +178,7 @@ bool List_UnitTest()
 		keyBase.push_back(key);
 		list.inseret_node(key);
 
-//		list.display();
+		//		list.display();
 	}
 
 	printf("After add nodes to the list:\n");
@@ -191,12 +192,13 @@ bool List_UnitTest()
 		{
 			int key = keyBase.back();
 			keyBase.pop_back();
-			
+
 			bool success = list.delete_node(key);
 			ASSERT(success);
 		}
 	}
 
 	printf("success!!!\n");
-	return true;
+	return false;
 }
+*/

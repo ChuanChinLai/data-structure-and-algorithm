@@ -143,12 +143,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="data structure\linked list\source\linked list Solution.cpp" />
     <ClCompile Include="data structure\linked list\source\linked list.cpp" />
+    <ClCompile Include="data structure\stack\source\stack.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="data structure\linked list\linked list Solution.h" />
     <ClInclude Include="data structure\linked list\linked list.h" />
+    <ClInclude Include="data structure\node\node.h" />
+    <ClInclude Include="data structure\stack\stack.h" />
     <ClInclude Include="general\Assert.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
