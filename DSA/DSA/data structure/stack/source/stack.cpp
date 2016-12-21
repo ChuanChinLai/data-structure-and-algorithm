@@ -4,16 +4,15 @@
 #include <vector>
 #include <algorithm>
 
-void Stack::_push(const int key)
+void Stack::_push(const int i_key)
 {
-	Node* new_Node = new Node(key);
+	Node* new_Node = new Node(i_key);
 	ASSERT(new_Node);
 
 	m_size++;
 
 	if (m_pTop == nullptr)
 	{
-		m_pRoot = new_Node;
 		m_pTop = new_Node;
 	}
 	else

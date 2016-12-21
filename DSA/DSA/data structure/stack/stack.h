@@ -5,13 +5,13 @@ class Node;
 class Stack
 {
 public:
-	Stack() : m_pTop(nullptr), m_pRoot(nullptr), m_size(0)
+	Stack() : m_pTop(nullptr), m_size(0)
 	{
 
 	}
 
 	//Inserts a node into the list
-	void _push(const int key);
+	void _push(const int i_key);
 	//Removes the last item into the list
 	void _pop();
 
@@ -29,7 +29,6 @@ public:
 private:
 
 	Node* m_pTop;
-	Node* m_pRoot;
 	size_t m_size;
 };
 

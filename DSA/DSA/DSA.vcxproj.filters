@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\linked list">
-      <UniqueIdentifier>{f2285003-8421-47e2-a44d-da8a4b75b1bf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\linked list">
-      <UniqueIdentifier>{838e05e2-9884-4c3f-b41e-71fda3b90901}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Assert">
       <UniqueIdentifier>{e15d3e30-11f8-4717-b384-0e9e4e24a3fa}</UniqueIdentifier>
     </Filter>
@@ -31,24 +25,39 @@
     <Filter Include="Header Files\Node">
       <UniqueIdentifier>{63de35a2-447f-4930-b016-4d1fa36c00ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Linked list">
+      <UniqueIdentifier>{f2285003-8421-47e2-a44d-da8a4b75b1bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Linked list">
+      <UniqueIdentifier>{838e05e2-9884-4c3f-b41e-71fda3b90901}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Queue">
+      <UniqueIdentifier>{07ea940d-d862-40bd-81ed-9679082459fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Queue">
+      <UniqueIdentifier>{0c385287-1810-4919-9cba-6d2a2bb34af0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="data structure\linked list\source\linked list.cpp">
-      <Filter>Source Files\linked list</Filter>
+      <Filter>Source Files\Linked list</Filter>
     </ClCompile>
     <ClCompile Include="data structure\stack\source\stack.cpp">
       <Filter>Source Files\Stack</Filter>
     </ClCompile>
     <ClCompile Include="data structure\linked list\source\linked list Solution.cpp">
-      <Filter>Source Files\linked list</Filter>
+      <Filter>Source Files\Linked list</Filter>
+    </ClCompile>
+    <ClCompile Include="data structure\queue\source\queue.cpp">
+      <Filter>Source Files\Queue</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="data structure\linked list\linked list.h">
-      <Filter>Header Files\linked list</Filter>
+      <Filter>Header Files\Linked list</Filter>
     </ClInclude>
     <ClInclude Include="general\Assert.h">
       <Filter>Header Files\Assert</Filter>
@@ -58,6 +67,9 @@
     </ClInclude>
     <ClInclude Include="data structure\node\node.h">
       <Filter>Header Files\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="data structure\queue\queue.h">
+      <Filter>Header Files\Queue</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
