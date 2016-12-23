@@ -25,17 +25,35 @@
     <Filter Include="Header Files\Node">
       <UniqueIdentifier>{63de35a2-447f-4930-b016-4d1fa36c00ef}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Linked list">
-      <UniqueIdentifier>{f2285003-8421-47e2-a44d-da8a4b75b1bf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Linked list">
-      <UniqueIdentifier>{838e05e2-9884-4c3f-b41e-71fda3b90901}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Queue">
       <UniqueIdentifier>{07ea940d-d862-40bd-81ed-9679082459fb}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Queue">
       <UniqueIdentifier>{0c385287-1810-4919-9cba-6d2a2bb34af0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Recursion">
+      <UniqueIdentifier>{ce596abb-76fb-4d0d-9fba-b781524a66ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Recursion">
+      <UniqueIdentifier>{2e255d4d-a398-4674-b200-b8db0fa445a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hash Table">
+      <UniqueIdentifier>{e394a0b8-575b-4d26-ab91-455ec9d4fdf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Hash Table">
+      <UniqueIdentifier>{4d9ae133-4cab-4f51-b53a-d0045ffd392a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Linked List">
+      <UniqueIdentifier>{838e05e2-9884-4c3f-b41e-71fda3b90901}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Linked List">
+      <UniqueIdentifier>{f2285003-8421-47e2-a44d-da8a4b75b1bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Math">
+      <UniqueIdentifier>{67c4f813-01b7-4ef0-8ad5-1a6135d58174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{dc7a7e8a-9cf3-4079-9fd0-1da28a71ddf5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -43,21 +61,30 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="data structure\linked list\source\linked list.cpp">
-      <Filter>Source Files\Linked list</Filter>
+      <Filter>Source Files\Linked List</Filter>
     </ClCompile>
     <ClCompile Include="data structure\stack\source\stack.cpp">
       <Filter>Source Files\Stack</Filter>
     </ClCompile>
     <ClCompile Include="data structure\linked list\source\linked list Solution.cpp">
-      <Filter>Source Files\Linked list</Filter>
+      <Filter>Source Files\Linked List</Filter>
     </ClCompile>
     <ClCompile Include="data structure\queue\source\queue.cpp">
       <Filter>Source Files\Queue</Filter>
     </ClCompile>
+    <ClCompile Include="algorithm\recursion\source\recursion.cpp">
+      <Filter>Source Files\Recursion</Filter>
+    </ClCompile>
+    <ClCompile Include="data structure\hash table\source\hash_table.cpp">
+      <Filter>Source Files\Hash Table</Filter>
+    </ClCompile>
+    <ClCompile Include="general\math\source\math.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="data structure\linked list\linked list.h">
-      <Filter>Header Files\Linked list</Filter>
+      <Filter>Header Files\Linked List</Filter>
     </ClInclude>
     <ClInclude Include="general\Assert.h">
       <Filter>Header Files\Assert</Filter>
@@ -70,6 +97,15 @@
     </ClInclude>
     <ClInclude Include="data structure\queue\queue.h">
       <Filter>Header Files\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="algorithm\recursion\recursion.h">
+      <Filter>Header Files\Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="data structure\hash table\hash_table.h">
+      <Filter>Header Files\Hash Table</Filter>
+    </ClInclude>
+    <ClInclude Include="general\math\math.h">
+      <Filter>Header Files\Math</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

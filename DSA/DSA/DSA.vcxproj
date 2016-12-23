@@ -143,18 +143,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="algorithm\recursion\source\recursion.cpp" />
+    <ClCompile Include="data structure\hash table\source\hash_table.cpp" />
     <ClCompile Include="data structure\linked list\source\linked list Solution.cpp" />
     <ClCompile Include="data structure\linked list\source\linked list.cpp" />
     <ClCompile Include="data structure\queue\source\queue.cpp" />
     <ClCompile Include="data structure\stack\source\stack.cpp" />
+    <ClCompile Include="general\math\source\math.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="algorithm\recursion\recursion.h" />
+    <ClInclude Include="data structure\hash table\hash_table.h" />
     <ClInclude Include="data structure\linked list\linked list.h" />
     <ClInclude Include="data structure\node\node.h" />
     <ClInclude Include="data structure\queue\queue.h" />
     <ClInclude Include="data structure\stack\stack.h" />
     <ClInclude Include="general\Assert.h" />
+    <ClInclude Include="general\math\math.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
