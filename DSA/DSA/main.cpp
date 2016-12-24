@@ -8,6 +8,7 @@
 #include <data structure\stack\stack.h>
 #include <data structure\queue\queue.h>
 #include <data structure\hash table\hash_table.h>
+#include <data structure\tree\binary_tree.h>
 
 #include <algorithm\recursion\recursion.h>
 #include <general\math\math.h>
@@ -19,25 +20,21 @@ int main(int argc, const char *argv[])
 //	stack_UnitTest();
 //	queue_UnitTest();
 
-	HashTable<int> hashTable(20);
-	int item = 0;
+//	HashTable<int> hashTable(20);
 
-	item = 348;
-	hashTable._insert(112, item);
-	item = 841; 
-	hashTable._insert(87, item);
+	BinaryTree binaryTree;
 
-	
-	if (hashTable._find(87, &item))
-		std::cout << "Item: 87 has a value of " << item << "." << std::endl;
-	else
-		std::cout << "87 Not Found" << std::endl;
+	binaryTree._push(20);
+	binaryTree._push(10);
+	binaryTree._push(12);
+	binaryTree._push(27);
+	binaryTree._push(9);
+	binaryTree._push(50);
+	binaryTree._push(33);
+	binaryTree._push(6);
+	binaryTree._delete(27);
 
-	if (hashTable._find(112, &item))
-		std::cout << "Item: 112 has a value of " << item << "." << std::endl;
-	else
-		std::cout << "112 Not Found" << item << "." << std::endl;
-
+	binaryTree._display_PreOrder();
 
 	printf("Memory Leak? %d\n", _CrtDumpMemoryLeaks());
 

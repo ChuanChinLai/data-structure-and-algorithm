@@ -149,6 +149,7 @@
     <ClCompile Include="data structure\linked list\source\linked list.cpp" />
     <ClCompile Include="data structure\queue\source\queue.cpp" />
     <ClCompile Include="data structure\stack\source\stack.cpp" />
+    <ClCompile Include="data structure\tree\source\binary_tree.cpp" />
     <ClCompile Include="general\math\source\math.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -159,6 +160,7 @@
     <ClInclude Include="data structure\node\node.h" />
     <ClInclude Include="data structure\queue\queue.h" />
     <ClInclude Include="data structure\stack\stack.h" />
+    <ClInclude Include="data structure\tree\binary_tree.h" />
     <ClInclude Include="general\Assert.h" />
     <ClInclude Include="general\math\math.h" />
   </ItemGroup>
