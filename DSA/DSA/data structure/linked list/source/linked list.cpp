@@ -176,15 +176,13 @@ bool List_UnitTest()
 		int key = rand() % 50;
 		keyBase.push_back(key);
 		list.inseret_node(key);
-
-//		list.display();
 	}
 
 	printf("After add nodes to the list:\n");
 
 	if (!keyBase.empty())
 	{
-		// randomize the addresses
+		// randomize the keys
 		std::random_shuffle(keyBase.begin(), keyBase.end());
 
 		while (!keyBase.empty())

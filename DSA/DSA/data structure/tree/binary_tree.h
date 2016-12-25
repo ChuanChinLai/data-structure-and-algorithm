@@ -84,3 +84,6 @@ private:
 	void _display_InOrder(TreeNode* i_node);
 	void _display_PostOrder(TreeNode* i_node);
 };
+
+
+extern void binarytree_UnitTest();

@@ -11,6 +11,7 @@
 #include <data structure\tree\binary_tree.h>
 
 #include <algorithm\recursion\recursion.h>
+#include <algorithm\sorting\sorting.h>
 #include <general\math\math.h>
 
 int main(int argc, const char *argv[])
@@ -21,20 +22,13 @@ int main(int argc, const char *argv[])
 //	queue_UnitTest();
 
 //	HashTable<int> hashTable(20);
+//	binarytree_UnitTest();
 
-	BinaryTree binaryTree;
+	int array[10] = {80, 64, 99, 76, 5, 5, 28, 80, 1, 3};
 
-	binaryTree._push(20);
-	binaryTree._push(10);
-	binaryTree._push(12);
-	binaryTree._push(27);
-	binaryTree._push(9);
-	binaryTree._push(50);
-	binaryTree._push(33);
-	binaryTree._push(6);
-	binaryTree._delete(27);
-
-	binaryTree._display_PreOrder();
+//	bubble_sort(array, 10);
+//	selection_sort(array, 10);
+	insertion_sort(array, 10);
 
 	printf("Memory Leak? %d\n", _CrtDumpMemoryLeaks());
 
