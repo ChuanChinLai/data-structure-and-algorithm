@@ -84,3 +84,74 @@ void insertion_sort(int * i_pArray, const size_t i_size)
 	printf_array(i_pArray, i_size);
 	return;
 }
+
+void merge_sort(int * i_pArray, const size_t lower_index, const size_t upper_index)
+{
+	ASSERT(i_pArray);
+
+	if (lower_index == upper_index)
+		return;
+
+	int mid_index = (lower_index + upper_index) / 2;
+
+	merge_sort(i_pArray, lower_index, mid_index);
+	merge_sort(i_pArray, mid_index + 1, upper_index);
+
+	merge(i_pArray, lower_index, mid_index, upper_index);
+}
+
+void merge(int * i_pArray, int lower_index, int mid_index, int upper_index)
+{
+	const int size_L = mid_index - lower_index + 1;
+	const int size_R = upper_index - mid_index;
+	
+	int* tmpArray_L = new int[size_L];
+	int* tmpArray_R = new int[size_R];
+
+	for (size_t i = 0; i < size_L; i++)
+	{
+		tmpArray_L[i] = i_pArray[lower_index + i];
+	}
+
+	for (size_t i = 0; i < size_R; i++)
+	{
+		tmpArray_R[i] = i_pArray[mid_index + 1 + i];
+	}
+
+	
+	int index_L = 0;
+	int index_R = 0;
+	int index_merge = lower_index;
+
+	while (index_L < size_L && index_R < size_R)
+	{
+		if (tmpArray_L[index_L] <= tmpArray_R[index_R])
+		{
+			i_pArray[index_merge] = tmpArray_L[index_L];
+			index_L++;
+		}
+		else
+		{
+			i_pArray[index_merge] = tmpArray_R[index_R];
+			index_R++;
+		}
+		index_merge++;
+	}
+
+	while (index_L < size_L)
+	{
+		i_pArray[index_merge] = tmpArray_L[index_L];
+		index_L++;
+		index_merge++;
+	}
+
+	while (index_R < size_R)
+	{
+		i_pArray[index_merge] = tmpArray_R[index_R];
+		index_R++;
+		index_merge++;
+	}
+
+	delete[] tmpArray_L;
+	delete[] tmpArray_R;
+}

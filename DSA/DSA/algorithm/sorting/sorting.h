@@ -8,4 +8,5 @@ extern void selection_sort(int* i_pArray, const size_t i_size);
 
 extern void insertion_sort(int* i_pArray, const size_t i_size);
 
-extern void merge_sort(int* i_pArray, const size_t i_size);
+extern void merge_sort(int* i_pArray, const size_t lower_index, const size_t upper_index);
+extern void merge(int* i_pArray, int lower_index, int mid_index, int upper_index);
