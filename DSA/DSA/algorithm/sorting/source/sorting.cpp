@@ -1,4 +1,5 @@
 #include "..\sorting.h"
+#include <data structure\heap\heap.h>
 #include "general\Assert.h"
 
 void printf_array(const int * i_pArray, const size_t i_size)
@@ -154,4 +155,21 @@ void merge(int * i_pArray, int lower_index, int mid_index, int upper_index)
 
 	delete[] tmpArray_L;
 	delete[] tmpArray_R;
+}
+
+void heap_sort(int * i_pArray, const size_t i_size)
+{
+	Heap heap;
+
+	for (size_t i = 0; i < i_size; i++)
+	{
+		heap._push(i_pArray[i]);
+	}
+
+	for (int i = i_size - 1; i >= 0; i--)
+	{
+		i_pArray[i] = heap._peek();
+		heap._pop();
+	}
+	printf_array(i_pArray, i_size);
 }

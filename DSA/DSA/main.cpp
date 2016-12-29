@@ -29,10 +29,11 @@ int main(int argc, const char *argv[])
 //	bubble_sort(array, 10);
 //	selection_sort(array, 10);
 //	insertion_sort(array, 10);
-	printf_array(array, 10);
-	merge_sort(array, 0, 10-1);
+//	printf_array(array, 10);
+//	merge_sort(array, 0, 10-1);
 
-	printf_array(array, 10);
+	heap_sort(array, 10);
+
 
 	printf("Memory Leak? %d\n", _CrtDumpMemoryLeaks());
 

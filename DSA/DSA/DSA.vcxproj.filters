@@ -79,6 +79,12 @@
     <Filter Include="Source Files\algorithm\Sorting">
       <UniqueIdentifier>{ce238c08-c090-4653-8803-899e652ee213}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\data structure\Heap">
+      <UniqueIdentifier>{c289f061-c7b2-4f0e-8562-84fcbd0ab3f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\data structure\Heap">
+      <UniqueIdentifier>{cd4e6823-2854-4e71-85ce-0e1b8da84da4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -111,6 +117,9 @@
     <ClCompile Include="algorithm\sorting\source\sorting.cpp">
       <Filter>Source Files\algorithm\Sorting</Filter>
     </ClCompile>
+    <ClCompile Include="data structure\heap\source\heap.cpp">
+      <Filter>Source Files\data structure\Heap</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="data structure\linked list\linked list.h">
@@ -142,6 +151,9 @@
     </ClInclude>
     <ClInclude Include="algorithm\sorting\sorting.h">
       <Filter>Header Files\algorithm\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="data structure\heap\heap.h">
+      <Filter>Header Files\data structure\Heap</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
