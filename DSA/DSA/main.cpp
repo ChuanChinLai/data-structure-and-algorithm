@@ -7,6 +7,8 @@
 #include <data structure\linked list\linked list.h>
 #include <data structure\stack\stack.h>
 #include <data structure\queue\queue.h>
+#include <data structure\graph\graph.h>
+
 #include <data structure\hash table\hash_table.h>
 #include <data structure\tree\binary_tree.h>
 
@@ -27,7 +29,6 @@ int main(int argc, const char *argv[])
 //	int array[10] = {80, 64, 99, 76, 5, 5, 28, 80, 1, 3};
 	int array[10] = { 80, 3, 3, 3, 3, 3, 3, 3, 1, 3 };
 
-
 //	bubble_sort(array, 10);
 //	selection_sort(array, 10);
 //	insertion_sort(array, 10);
@@ -39,9 +40,18 @@ int main(int argc, const char *argv[])
 //	printf_array(array, 10);
 //	quick_sort(array, 0, 10 - 1);
 //	printf_array(array, 10);
+//	Sort_UnitTest();
 
 
-	Sort_UnitTest();
+	Graph graph(5);
+
+	graph.addEdge(1, 0);
+	graph.addEdge(0, 2);
+	graph.addEdge(2, 1);
+	graph.addEdge(0, 3);
+	graph.addEdge(1, 4);
+	graph.DFS(0);
+	graph.destroy();
 
 	printf("Memory Leak? %d\n", _CrtDumpMemoryLeaks());
 

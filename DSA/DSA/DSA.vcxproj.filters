@@ -25,135 +25,90 @@
     <Filter Include="Header Files\data structure">
       <UniqueIdentifier>{73598716-2f9f-41d0-b5d6-9a30b3a6f5d4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\data structure\Stack">
-      <UniqueIdentifier>{0ef54dbe-0b54-4916-82cf-cffb973cb7a0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\data structure\Queue">
-      <UniqueIdentifier>{07ea940d-d862-40bd-81ed-9679082459fb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\data structure\Binary Tree">
-      <UniqueIdentifier>{9e26e167-a50b-491c-95f9-47b60908f0a6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\data structure\Hash Table">
-      <UniqueIdentifier>{e394a0b8-575b-4d26-ab91-455ec9d4fdf2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\data structure\Linked List">
-      <UniqueIdentifier>{f2285003-8421-47e2-a44d-da8a4b75b1bf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\data structure\Node">
-      <UniqueIdentifier>{63de35a2-447f-4930-b016-4d1fa36c00ef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\data structure">
       <UniqueIdentifier>{23547f20-dd09-4094-b882-88bca2d316fc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\data structure\Hash Table">
-      <UniqueIdentifier>{4d9ae133-4cab-4f51-b53a-d0045ffd392a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\data structure\Linked List">
-      <UniqueIdentifier>{838e05e2-9884-4c3f-b41e-71fda3b90901}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\data structure\Binary Tree">
-      <UniqueIdentifier>{97021da1-3849-4617-ae38-118c614cdf6b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\data structure\Queue">
-      <UniqueIdentifier>{0c385287-1810-4919-9cba-6d2a2bb34af0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\data structure\Stack">
-      <UniqueIdentifier>{fcb90368-074f-4d47-b8d5-632dc768fb11}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\algorithm">
       <UniqueIdentifier>{7f67e167-3e62-4157-a524-f7b2f5f7fd14}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\algorithm\Recursion">
-      <UniqueIdentifier>{ce596abb-76fb-4d0d-9fba-b781524a66ca}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\algorithm">
       <UniqueIdentifier>{15a43b87-abd9-454a-ac5c-84c0ad4feaab}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\algorithm\Recursion">
-      <UniqueIdentifier>{2e255d4d-a398-4674-b200-b8db0fa445a3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\algorithm\Sorting">
-      <UniqueIdentifier>{8dd65ad3-23cf-438b-b80d-ba1089c65750}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\algorithm\Sorting">
-      <UniqueIdentifier>{ce238c08-c090-4653-8803-899e652ee213}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\data structure\Heap">
-      <UniqueIdentifier>{c289f061-c7b2-4f0e-8562-84fcbd0ab3f4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\data structure\Heap">
-      <UniqueIdentifier>{cd4e6823-2854-4e71-85ce-0e1b8da84da4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="data structure\linked list\source\linked list.cpp">
-      <Filter>Source Files\data structure\Linked List</Filter>
-    </ClCompile>
-    <ClCompile Include="data structure\stack\source\stack.cpp">
-      <Filter>Source Files\data structure\Stack</Filter>
-    </ClCompile>
-    <ClCompile Include="data structure\linked list\source\linked list Solution.cpp">
-      <Filter>Source Files\data structure\Linked List</Filter>
-    </ClCompile>
-    <ClCompile Include="data structure\queue\source\queue.cpp">
-      <Filter>Source Files\data structure\Queue</Filter>
-    </ClCompile>
-    <ClCompile Include="algorithm\recursion\source\recursion.cpp">
-      <Filter>Source Files\algorithm\Recursion</Filter>
-    </ClCompile>
-    <ClCompile Include="data structure\hash table\source\hash_table.cpp">
-      <Filter>Source Files\data structure\Hash Table</Filter>
-    </ClCompile>
     <ClCompile Include="general\math\source\math.cpp">
       <Filter>Source Files\Math</Filter>
     </ClCompile>
     <ClCompile Include="data structure\tree\source\binary_tree.cpp">
-      <Filter>Source Files\data structure\Binary Tree</Filter>
+      <Filter>Source Files\data structure</Filter>
     </ClCompile>
-    <ClCompile Include="algorithm\sorting\source\sorting.cpp">
-      <Filter>Source Files\algorithm\Sorting</Filter>
+    <ClCompile Include="data structure\hash table\source\hash_table.cpp">
+      <Filter>Source Files\data structure</Filter>
     </ClCompile>
     <ClCompile Include="data structure\heap\source\heap.cpp">
-      <Filter>Source Files\data structure\Heap</Filter>
+      <Filter>Source Files\data structure</Filter>
+    </ClCompile>
+    <ClCompile Include="data structure\linked list\source\linked list.cpp">
+      <Filter>Source Files\data structure</Filter>
+    </ClCompile>
+    <ClCompile Include="data structure\linked list\source\linked list Solution.cpp">
+      <Filter>Source Files\data structure</Filter>
+    </ClCompile>
+    <ClCompile Include="data structure\queue\source\queue.cpp">
+      <Filter>Source Files\data structure</Filter>
+    </ClCompile>
+    <ClCompile Include="data structure\stack\source\stack.cpp">
+      <Filter>Source Files\data structure</Filter>
+    </ClCompile>
+    <ClCompile Include="algorithm\recursion\source\recursion.cpp">
+      <Filter>Source Files\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="algorithm\sorting\source\sorting.cpp">
+      <Filter>Source Files\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="data structure\graph\source\graph.cpp">
+      <Filter>Source Files\data structure</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="data structure\linked list\linked list.h">
-      <Filter>Header Files\data structure\Linked List</Filter>
-    </ClInclude>
     <ClInclude Include="general\Assert.h">
       <Filter>Header Files\Assert</Filter>
-    </ClInclude>
-    <ClInclude Include="data structure\stack\stack.h">
-      <Filter>Header Files\data structure\Stack</Filter>
-    </ClInclude>
-    <ClInclude Include="data structure\node\node.h">
-      <Filter>Header Files\data structure\Node</Filter>
-    </ClInclude>
-    <ClInclude Include="data structure\queue\queue.h">
-      <Filter>Header Files\data structure\Queue</Filter>
-    </ClInclude>
-    <ClInclude Include="algorithm\recursion\recursion.h">
-      <Filter>Header Files\algorithm\Recursion</Filter>
-    </ClInclude>
-    <ClInclude Include="data structure\hash table\hash_table.h">
-      <Filter>Header Files\data structure\Hash Table</Filter>
     </ClInclude>
     <ClInclude Include="general\math\math.h">
       <Filter>Header Files\Math</Filter>
     </ClInclude>
     <ClInclude Include="data structure\tree\binary_tree.h">
-      <Filter>Header Files\data structure\Binary Tree</Filter>
+      <Filter>Header Files\data structure</Filter>
     </ClInclude>
-    <ClInclude Include="algorithm\sorting\sorting.h">
-      <Filter>Header Files\algorithm\Sorting</Filter>
+    <ClInclude Include="data structure\hash table\hash_table.h">
+      <Filter>Header Files\data structure</Filter>
     </ClInclude>
     <ClInclude Include="data structure\heap\heap.h">
-      <Filter>Header Files\data structure\Heap</Filter>
+      <Filter>Header Files\data structure</Filter>
+    </ClInclude>
+    <ClInclude Include="data structure\linked list\linked list.h">
+      <Filter>Header Files\data structure</Filter>
+    </ClInclude>
+    <ClInclude Include="data structure\node\node.h">
+      <Filter>Header Files\data structure</Filter>
+    </ClInclude>
+    <ClInclude Include="data structure\queue\queue.h">
+      <Filter>Header Files\data structure</Filter>
+    </ClInclude>
+    <ClInclude Include="data structure\stack\stack.h">
+      <Filter>Header Files\data structure</Filter>
+    </ClInclude>
+    <ClInclude Include="algorithm\recursion\recursion.h">
+      <Filter>Header Files\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="algorithm\sorting\sorting.h">
+      <Filter>Header Files\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="data structure\graph\graph.h">
+      <Filter>Header Files\data structure</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

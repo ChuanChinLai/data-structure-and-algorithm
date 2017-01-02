@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="algorithm\recursion\source\recursion.cpp" />
     <ClCompile Include="algorithm\sorting\source\sorting.cpp" />
+    <ClCompile Include="data structure\graph\source\graph.cpp" />
     <ClCompile Include="data structure\hash table\source\hash_table.cpp" />
     <ClCompile Include="data structure\heap\source\heap.cpp" />
     <ClCompile Include="data structure\linked list\source\linked list Solution.cpp" />
@@ -158,6 +159,7 @@
   <ItemGroup>
     <ClInclude Include="algorithm\recursion\recursion.h" />
     <ClInclude Include="algorithm\sorting\sorting.h" />
+    <ClInclude Include="data structure\graph\graph.h" />
     <ClInclude Include="data structure\hash table\hash_table.h" />
     <ClInclude Include="data structure\heap\heap.h" />
     <ClInclude Include="data structure\linked list\linked list.h" />
