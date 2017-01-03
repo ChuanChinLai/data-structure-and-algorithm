@@ -5,7 +5,7 @@ class Node;
 class Queue
 {
 public:
-	Queue(): pFront(nullptr), pRear(nullptr)
+	Queue(): m_size(0), pFront(nullptr), pRear(nullptr)
 	{
 
 	}
@@ -18,7 +18,7 @@ public:
 	int _back();
 
 	bool _empty();
-	size_t _size();
+	size_t _size() const;
 	void _destroy();
 
 private:

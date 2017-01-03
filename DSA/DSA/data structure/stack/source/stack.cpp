@@ -4,91 +4,6 @@
 #include <vector>
 #include <algorithm>
 
-void Stack::_push(const int i_key)
-{
-	Node* new_Node = new Node(i_key);
-	ASSERT(new_Node);
-
-	m_size++;
-
-	if (m_pTop == nullptr)
-	{
-		m_pTop = new_Node;
-	}
-	else
-	{
-		Node* this_Node = m_pTop;
-		m_pTop = new_Node;
-		new_Node->pNext = this_Node;
-	}
-
-}
-
-void Stack::_pop()
-{
-	if (m_pTop == nullptr)
-	{
-		printf("Nothing can be pop\n");
-		return;
-	}
-	else
-	{
-		m_size--;
-
-		Node* pThisNode = m_pTop;
-		m_pTop = m_pTop->pNext;
-
-		printf("pop: (%d)\n", pThisNode->m_data);
-		delete pThisNode;
-	}
-}
-
-void Stack::_display()
-{
-	if (_empty())
-	{
-		printf("The stack is empty");
-	}
-	else
-	{
-		Node* pThisNode = m_pTop;
-		
-		while (pThisNode != nullptr)
-		{
-			printf("(%d)->", pThisNode->m_data);
-			pThisNode = pThisNode->pNext;
-		}
-		printf("NULL \n");
-	}
-}
-
-bool Stack::_empty() const
-{
-	if (m_pTop == nullptr)
-		return true;
-	else
-		return false;
-}
-
-int Stack::_top() const
-{
-	if(m_pTop != nullptr)
-		return m_pTop->m_data;
-}
-
-size_t Stack::_size() const
-{
-	return m_size;
-}
-
-void Stack::_destroy()
-{
-	while (!_empty())
-	{
-		_pop();
-	}
-}
-
 void stack_UnitTest()
 {
 	const size_t times = 1024*1024;
@@ -106,11 +21,11 @@ void stack_UnitTest()
 		stack._push(key);
 	}
 
-	stack._display();
+//	stack._display();
 
 	printf("After add nodes to the stack:\n");
 
-	while (index > 0)
+	while (!keyBase.empty())
 	{
 		int key_1 = keyBase.back();
 		int key_2 = stack._top();
@@ -118,9 +33,82 @@ void stack_UnitTest()
 		ASSERT(key_1 == key_2);
 		keyBase.pop_back();
 		stack._pop();
-		index--;
 	}
+
+	ASSERT(stack._empty());
 
 	printf("success!!!\n");
 	return;
+}
+
+void Stack::_push(const int i_key)
+{
+	Node* new_node = new Node(i_key);
+	
+	if (m_pTop == nullptr)
+	{
+		m_pTop = new_node;
+		new_node->pNext == nullptr;
+	}
+	else
+	{
+		Node* tmp_node = m_pTop;
+		m_pTop = new_node;
+		new_node->pNext = tmp_node;
+	}
+	return;
+}
+
+void Stack::_pop()
+{
+	if (m_pTop == nullptr)
+		return;
+	else
+	{
+		Node* pop_node = m_pTop;
+		m_pTop = m_pTop->pNext;
+		delete pop_node;
+		return;
+	}
+}
+
+void Stack::_display()
+{
+	if (m_pTop == nullptr)
+		return;
+	else
+	{
+		Node* this_node = m_pTop;
+		while (this_node != nullptr)
+		{
+			printf("%d->", this_node->m_data);
+			this_node = this_node->pNext;
+		}
+	}
+}
+
+bool Stack::_empty() const
+{
+	if (m_pTop == nullptr)
+		return true;
+	else
+		return false;
+}
+
+int Stack::_top() const
+{
+	return m_pTop->m_data;
+}
+
+size_t Stack::_size() const
+{
+	return m_size;
+}
+
+void Stack::_destroy()
+{
+	while (!_empty())
+	{
+		_pop();
+	}
 }

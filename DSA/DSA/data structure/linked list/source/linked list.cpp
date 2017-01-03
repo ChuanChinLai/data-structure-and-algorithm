@@ -176,11 +176,9 @@ bool List_UnitTest()
 		list.inseret_node(key);
 	}
 
-	printf("%d\n", keyBase.size());
 	printf("After add nodes to the list:\n");
 
-	list.display();
-	list.reverse();
+//	list.display();
 
 	if (!keyBase.empty())
 	{
@@ -194,6 +192,7 @@ bool List_UnitTest()
 			
 			bool success = list.delete_node(key);
 			ASSERT(success);
+			list.reverse();
 		}
 	}
 

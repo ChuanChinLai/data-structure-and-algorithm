@@ -75,6 +75,15 @@
     <ClCompile Include="data structure\linked list\source\linked list Solution.cpp">
       <Filter>Source Files\data structure - Solution</Filter>
     </ClCompile>
+    <ClCompile Include="data structure\stack\source\stack Solution.cpp">
+      <Filter>Source Files\data structure - Solution</Filter>
+    </ClCompile>
+    <ClCompile Include="data structure\queue\source\queue Solution.cpp">
+      <Filter>Source Files\data structure - Solution</Filter>
+    </ClCompile>
+    <ClCompile Include="data structure\hash table\source\hash_table Solution.cpp">
+      <Filter>Source Files\data structure - Solution</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="general\Assert.h">
