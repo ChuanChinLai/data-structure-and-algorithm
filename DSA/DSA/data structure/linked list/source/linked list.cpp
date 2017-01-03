@@ -7,45 +7,45 @@
 
 void LinkedList::inseret_node(int i_key)
 {
-	Node* new_Node = new Node(i_key);
-	ASSERT(new_Node);
-	
+	Node* new_node = new Node(i_key);
+	ASSERT(new_node);
+
 	if (m_pRoot == nullptr)
 	{
-		m_pRoot = new_Node;
+		m_pRoot = new_node;
+		return;
 	}
 	else
 	{
-		Node* this_Node = m_pRoot;
-		Node* prev_Node = nullptr;
+		Node* prev_node = nullptr;
+		Node* this_node = m_pRoot;
 
-		if (new_Node->m_data <= this_Node->m_data)
+		if (i_key <= this_node->m_data)
 		{
-			m_pRoot = new_Node;
-			new_Node->pNext = this_Node;
+			m_pRoot = new_node;
+			new_node->pNext = this_node;
+			return;
 		}
 		else
 		{
-			while (this_Node != nullptr)
+			while (this_node != nullptr)
 			{
-				if (new_Node->m_data <= this_Node->m_data)
+				if (i_key <= this_node->m_data)
 				{
-					prev_Node->pNext = new_Node;
-					new_Node->pNext = this_Node;
+					prev_node->pNext = new_node;
+					new_node->pNext = this_node;
 					return;
 				}
 				else
 				{
-					prev_Node = this_Node;
-					this_Node = this_Node->pNext;
+					prev_node = this_node;
+					this_node = this_node->pNext;
 				}
 			}
-
-			prev_Node->pNext = new_Node;
-			new_Node->pNext = nullptr;
+			prev_node->pNext = new_node;
+			new_node->pNext = nullptr;
 			return;
 		}
-			
 	}
 }
 
@@ -53,45 +53,37 @@ bool LinkedList::delete_node(int i_key)
 {
 	if (m_pRoot == nullptr)
 	{
-		printf("The List is NULL\n");
 		return false;
 	}
 	else
 	{
-		Node* this_Node = m_pRoot;
-		Node* prev_Node = nullptr;
+		Node* prev_node = nullptr;
+		Node* this_node = m_pRoot;
 
-		if (i_key == this_Node->m_data)
+		if (this_node->m_data == i_key)
 		{
-			m_pRoot = this_Node->pNext;
-
-			printf("Delete: %d\n", this_Node->m_data);
-			
-			delete this_Node;
+			m_pRoot = this_node->pNext;
+			delete this_node;
 			return true;
 		}
 		else
 		{
-			while (this_Node != nullptr)
+			while (this_node != nullptr)
 			{
-				if (i_key == this_Node->m_data)
+				if (this_node->m_data == i_key)
 				{
-					prev_Node->pNext = this_Node->pNext;
-					printf("Delete: %d\n", this_Node->m_data);
-
-					delete this_Node;
+					prev_node->pNext = this_node->pNext;
+					delete this_node;
 					return true;
 				}
 				else
 				{
-					prev_Node = this_Node;
-					this_Node = this_Node->pNext;
+					prev_node = this_node;
+					this_node = this_node->pNext;
 				}
 			}
 		}
 	}
-
-	printf("Cannot find the node (%d)...\n", i_key);
 	return false;
 }
 
@@ -101,20 +93,21 @@ void LinkedList::reverse()
 		return;
 	else
 	{
-		Node* prev_Node = nullptr;
-		Node* this_Node = m_pRoot;
-		Node* next_Node = m_pRoot->pNext;
+		Node* prev_node = nullptr;
+		Node* this_node = m_pRoot;
+		Node* next_node = m_pRoot->pNext;
 
-		while (next_Node != nullptr)
+		while (next_node != nullptr)
 		{
-			this_Node->pNext = prev_Node;
-			prev_Node = this_Node;
-			this_Node = next_Node;
-			next_Node = next_Node->pNext;
+			this_node->pNext = prev_node;
+
+			prev_node = this_node;
+			this_node = next_node;
+			next_node = next_node->pNext;
 		}
 
-		this_Node->pNext = prev_Node;
-		m_pRoot = this_Node;
+		this_node->pNext = prev_node;
+		m_pRoot = this_node;
 	}
 }
 
@@ -161,6 +154,11 @@ void LinkedList::destroy()
 	}
 }
 
+Node * LinkedList::getRoot()
+{
+	return m_pRoot;
+}
+
 bool List_UnitTest()
 {
 	const size_t times = 1024;
@@ -173,12 +171,16 @@ bool List_UnitTest()
 	{
 		index++;
 
-		int key = rand() % 50;
+		int key = rand() % times;
 		keyBase.push_back(key);
 		list.inseret_node(key);
 	}
 
+	printf("%d\n", keyBase.size());
 	printf("After add nodes to the list:\n");
+
+	list.display();
+	list.reverse();
 
 	if (!keyBase.empty())
 	{
@@ -194,6 +196,8 @@ bool List_UnitTest()
 			ASSERT(success);
 		}
 	}
+
+	ASSERT(list.getRoot() == nullptr);
 
 	printf("success!!!\n");
 	return true;

@@ -19,7 +19,7 @@
 int main(int argc, const char *argv[])
 {
 
-//	List_UnitTest();
+	List_UnitTest();
 //	stack_UnitTest();
 //	queue_UnitTest();
 
@@ -42,7 +42,7 @@ int main(int argc, const char *argv[])
 //	printf_array(array, 10);
 //	Sort_UnitTest();
 
-
+	/*
 	Graph graph(5);
 
 	graph.addEdge(1, 0);
@@ -52,6 +52,7 @@ int main(int argc, const char *argv[])
 	graph.addEdge(1, 4);
 	graph.DFS(0);
 	graph.destroy();
+	*/
 
 	printf("Memory Leak? %d\n", _CrtDumpMemoryLeaks());
 

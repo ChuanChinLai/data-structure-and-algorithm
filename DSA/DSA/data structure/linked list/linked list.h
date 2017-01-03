@@ -31,6 +31,8 @@ public:
 	//destroy a list
 	void destroy();
 
+	Node* getRoot();
+
 private:
 
 	Node* m_pRoot;

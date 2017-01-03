@@ -34,6 +34,9 @@
     <Filter Include="Source Files\algorithm">
       <UniqueIdentifier>{15a43b87-abd9-454a-ac5c-84c0ad4feaab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\data structure - Solution">
+      <UniqueIdentifier>{7a348655-6db2-4532-beed-ca4fcf002353}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -54,9 +57,6 @@
     <ClCompile Include="data structure\linked list\source\linked list.cpp">
       <Filter>Source Files\data structure</Filter>
     </ClCompile>
-    <ClCompile Include="data structure\linked list\source\linked list Solution.cpp">
-      <Filter>Source Files\data structure</Filter>
-    </ClCompile>
     <ClCompile Include="data structure\queue\source\queue.cpp">
       <Filter>Source Files\data structure</Filter>
     </ClCompile>
@@ -71,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="data structure\graph\source\graph.cpp">
       <Filter>Source Files\data structure</Filter>
+    </ClCompile>
+    <ClCompile Include="data structure\linked list\source\linked list Solution.cpp">
+      <Filter>Source Files\data structure - Solution</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

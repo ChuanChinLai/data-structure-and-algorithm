@@ -46,7 +46,6 @@ void LinkedList::inseret_node(int i_key)
 			new_Node->pNext = nullptr;
 			return;
 		}
-
 	}
 }
 
@@ -177,15 +176,13 @@ bool List_UnitTest()
 		int key = rand() % 50;
 		keyBase.push_back(key);
 		list.inseret_node(key);
-
-		//		list.display();
 	}
 
 	printf("After add nodes to the list:\n");
 
 	if (!keyBase.empty())
 	{
-		// randomize the addresses
+		// randomize the keys
 		std::random_shuffle(keyBase.begin(), keyBase.end());
 
 		while (!keyBase.empty())
@@ -199,6 +196,6 @@ bool List_UnitTest()
 	}
 
 	printf("success!!!\n");
-	return false;
+	return true;
 }
 */
