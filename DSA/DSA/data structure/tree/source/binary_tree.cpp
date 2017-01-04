@@ -199,7 +199,6 @@ void BinaryTree::_display_PreOrder(TreeNode* i_node)
 	if (i_node != nullptr)
 	{
 		printf("%d ", i_node->getKey());
-
 		_display_PreOrder(i_node->getLeftNode());
 		_display_PreOrder(i_node->getRightNode());
 	}
@@ -276,6 +275,5 @@ void binarytree_UnitTest()
 			keyBase.pop_back();
 		}
 	}
-
 	printf("success!!!\n");
 }
