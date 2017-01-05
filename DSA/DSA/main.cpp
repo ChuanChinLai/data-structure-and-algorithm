@@ -22,9 +22,9 @@ int main(int argc, const char *argv[])
 //	List_UnitTest();
 //	stack_UnitTest();
 //	queue_UnitTest();
-	Hash_Table_UnitTest();
+//	Hash_Table_UnitTest();
 //	HashTable<int> hashTable(20);
-//	binarytree_UnitTest();
+	binarytree_UnitTest();
 
 //	int array[10] = {80, 64, 99, 76, 5, 5, 28, 80, 1, 3};
 	int array[10] = { 80, 3, 3, 3, 3, 3, 3, 3, 1, 3 };

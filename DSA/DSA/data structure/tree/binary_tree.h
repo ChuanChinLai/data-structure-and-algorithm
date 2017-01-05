@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 
 class TreeNode
 {
@@ -72,10 +73,13 @@ public:
 	bool _search(int i_key);
 	bool _delete(int i_key);
 
+	TreeNode* getRoot();
+
 	void _display_PreOrder();
 	void _display_InOrder();
 	void _display_PostOrder();
 
+	std::vector<int> inOrderVector;
 
 private:
 	TreeNode* m_root;

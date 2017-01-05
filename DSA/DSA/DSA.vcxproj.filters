@@ -37,6 +37,9 @@
     <Filter Include="Source Files\data structure - Solution">
       <UniqueIdentifier>{7a348655-6db2-4532-beed-ca4fcf002353}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\algorithm - Solution">
+      <UniqueIdentifier>{0c1b0e28-8e3f-46b2-8627-cc3c73d9967b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -83,6 +86,12 @@
     </ClCompile>
     <ClCompile Include="data structure\hash table\source\hash_table Solution.cpp">
       <Filter>Source Files\data structure - Solution</Filter>
+    </ClCompile>
+    <ClCompile Include="data structure\tree\source\binary_tree Solution.cpp">
+      <Filter>Source Files\data structure - Solution</Filter>
+    </ClCompile>
+    <ClCompile Include="data structure\tree\source\sorting Solution.cpp">
+      <Filter>Source Files\algorithm - Solution</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

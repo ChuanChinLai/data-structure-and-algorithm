@@ -155,7 +155,9 @@
     <ClCompile Include="data structure\queue\source\queue.cpp" />
     <ClCompile Include="data structure\stack\source\stack Solution.cpp" />
     <ClCompile Include="data structure\stack\source\stack.cpp" />
+    <ClCompile Include="data structure\tree\source\binary_tree Solution.cpp" />
     <ClCompile Include="data structure\tree\source\binary_tree.cpp" />
+    <ClCompile Include="data structure\tree\source\sorting Solution.cpp" />
     <ClCompile Include="general\math\source\math.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
