@@ -1,6 +1,8 @@
 #pragma once
 
 extern void printf_array(const int* i_pArray, const size_t i_size);
+extern void Sort_UnitTest();
+
 
 extern void bubble_sort(int* i_pArray, const size_t i_size);
 
@@ -16,4 +18,4 @@ extern void heap_sort(int* i_pArray, const size_t i_size);
 extern void quick_sort(int* i_pArray, int index_L, int index_R);
 extern int partition(int* i_pArray, int index_L, int index_R, int i_pivot);
 
-extern void Sort_UnitTest();
+
