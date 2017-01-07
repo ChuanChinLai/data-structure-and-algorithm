@@ -93,6 +93,9 @@
     <ClCompile Include="data structure\tree\source\sorting Solution.cpp">
       <Filter>Source Files\algorithm - Solution</Filter>
     </ClCompile>
+    <ClCompile Include="data structure\heap\source\heap Solution.cpp">
+      <Filter>Source Files\data structure - Solution</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="general\Assert.h">

@@ -19,7 +19,7 @@ void printf_array(const int * i_pArray, const size_t i_size)
 
 void Sort_UnitTest()
 {
-	const size_t times = 1024 * 32;
+	const size_t times = 1024*64;
 	size_t index = 0;
 
 	std::vector<int> keyBase;
@@ -33,7 +33,7 @@ void Sort_UnitTest()
 
 	for (size_t i = 0; i < times; i++)
 	{
-		int key = rand() % 50;
+		int key = rand() % times;
 
 		pArray_1[i] = key;
 		pArray_2[i] = key;
@@ -48,7 +48,7 @@ void Sort_UnitTest()
 	std::clock_t start;
 
 	start = std::clock();
-	printf("C++ Sorting...\n");
+	printf("C++ STL Sorting...\n");
 	std::sort(keyBase.begin(), keyBase.end());
 	printf("Used Time: %2.f ms\n", (std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000));
 	
@@ -138,15 +138,13 @@ void insertion_sort(int * i_pArray, const size_t i_size)
 	for (size_t i = 1; i < i_size; i++)
 	{
 		int current_index = i;
-		int tmp = i_pArray[current_index];
-
+		int tmp = i_pArray[i];
 
 		while (current_index > 0 && i_pArray[current_index - 1] > tmp)
 		{
 			i_pArray[current_index] = i_pArray[current_index - 1];
 			current_index--;
 		}
-
 		i_pArray[current_index] = tmp;
 	}
 }
