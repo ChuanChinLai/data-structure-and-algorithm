@@ -96,6 +96,9 @@
     <ClCompile Include="data structure\heap\source\heap Solution.cpp">
       <Filter>Source Files\data structure - Solution</Filter>
     </ClCompile>
+    <ClCompile Include="data structure\graph\source\graph Solution.cpp">
+      <Filter>Source Files\data structure - Solution</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="general\Assert.h">

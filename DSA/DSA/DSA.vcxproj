@@ -146,6 +146,7 @@
   <ItemGroup>
     <ClCompile Include="algorithm\recursion\source\recursion.cpp" />
     <ClCompile Include="algorithm\sorting\source\sorting.cpp" />
+    <ClCompile Include="data structure\graph\source\graph Solution.cpp" />
     <ClCompile Include="data structure\graph\source\graph.cpp" />
     <ClCompile Include="data structure\hash table\source\hash_table Solution.cpp" />
     <ClCompile Include="data structure\hash table\source\hash_table.cpp" />

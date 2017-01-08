@@ -6,6 +6,7 @@
 class Graph
 {
 public:
+	/*
 	Graph(int i_numVertex): m_numVertex(i_numVertex)
 	{
 		ASSERT(i_numVertex > 0);
@@ -19,11 +20,13 @@ public:
 			adj = nullptr;
 		}
 	}
+	*/
+	Graph(int i_numVertex);
+	~Graph();
 
 	void addEdge(int Vertex_1, int Vertex_2);
-	void destroy() {
-		Graph::~Graph();
-	}
+
+	void destroy();
 
 	void BFS(int i_Vertex);
 	void BFS();
