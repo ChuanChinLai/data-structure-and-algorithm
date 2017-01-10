@@ -10,3 +10,5 @@ extern int n_Factorial(const int i_data);
 
 extern int n_Fibonacci(const int i_data);
 
+//Binary Search
+extern bool Binary_Search(const int i_data, int* i_pArray, int index_L, int index_R);

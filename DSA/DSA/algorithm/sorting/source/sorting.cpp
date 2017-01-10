@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <algorithm\sorting\sorting.h>
+#include <algorithm\recursion\recursion.h>
 #include <data structure\heap\heap.h>
 #include <general\Assert.h>
 #include <ctime>
@@ -19,7 +20,7 @@ void printf_array(const int * i_pArray, const size_t i_size)
 
 void Sort_UnitTest()
 {
-	const size_t times = 1024*64;
+	const size_t times = 1024 * 32;
 	size_t index = 0;
 
 	std::vector<int> keyBase;
@@ -85,6 +86,10 @@ void Sort_UnitTest()
 	
 	for (size_t i = 0; i < times; i++)
 	{
+		int search_key = keyBase.at(static_cast<int>(rand() % keyBase.size()));
+		bool success = Binary_Search(search_key, pArray_1, 0, times - 1);
+		ASSERT(success == true);
+
 		ASSERT(keyBase.at(i) == pArray_1[i]);
 		ASSERT(keyBase.at(i) == pArray_2[i]);
 		ASSERT(keyBase.at(i) == pArray_3[i]);

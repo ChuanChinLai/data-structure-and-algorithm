@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <crtdbg.h>
 #include <iostream>
+#include <algorithm>
 
 #include <general\Assert.h>
 #include <data structure\linked list\linked list.h>
@@ -35,8 +36,8 @@ int main(int argc, const char *argv[])
 //	printf_array(array, 10);
 //	merge_sort(array, 0, 10-1);
 
-	heap_sort(array, 10);
-	printf_array(array, 10);
+//	heap_sort(array, 10);
+//	printf_array(array, 10);
 
 //	printf_array(array, 10);
 //	quick_sort(array, 0, 10 - 1);
