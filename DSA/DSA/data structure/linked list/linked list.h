@@ -22,6 +22,9 @@ public:
 	//delete a node
 	bool delete_node(int i_key);
 
+	//get the N's data
+	int at(int i_node);
+
 	//reverse a list
 	void reverse();
 

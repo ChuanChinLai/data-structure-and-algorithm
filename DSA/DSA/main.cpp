@@ -20,7 +20,7 @@
 int main(int argc, const char *argv[])
 {
 
-//	List_UnitTest();
+	List_UnitTest();
 //	stack_UnitTest();
 //	queue_UnitTest();
 //	Hash_Table_UnitTest();
@@ -42,7 +42,7 @@ int main(int argc, const char *argv[])
 //	printf_array(array, 10);
 //	quick_sort(array, 0, 10 - 1);
 //	printf_array(array, 10);
-	Sort_UnitTest();
+//	Sort_UnitTest();
 
 	/*
 	Graph graph(5);
