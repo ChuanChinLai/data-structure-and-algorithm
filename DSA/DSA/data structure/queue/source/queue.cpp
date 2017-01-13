@@ -16,7 +16,7 @@ void queue_UnitTest()
 	while (index < times)
 	{
 		index++;
-		int key = rand() % 50;
+		int key = rand() % times;
 
 		keyBase.push(key);
 		queue._push(key);
@@ -35,8 +35,9 @@ void queue_UnitTest()
 		keyBase.pop();
 		queue._pop();
 	}
-	ASSERT(queue._empty());
 
+	ASSERT(queue._empty());
+	ASSERT(queue._size() == keyBase.size());
 
 	printf("success!!!\n");
 	return;
@@ -47,16 +48,14 @@ void Queue::_push(const int i_key)
 	Node* new_node = new Node(i_key);
 	m_size++;
 
-	if (pFront == nullptr)
+	if (pFront == nullptr && pRear == nullptr)
 	{
 		pFront = new_node;
 		pRear = new_node;
-		new_node->pNext = nullptr;
 	}
 	else
 	{
 		pRear->pNext = new_node;
-		new_node->pNext = nullptr;
 		pRear = new_node;
 	}
 	return;
@@ -64,19 +63,23 @@ void Queue::_push(const int i_key)
 
 void Queue::_pop()
 {
-	if (pFront == nullptr)
-	{
-		return;
-	}
-	else
+	if (pFront == pRear)
 	{
 		m_size--;
+		Node* this_node = pFront;
 
-		Node* pop_node = pFront;
+		pFront = nullptr;
+		pRear = nullptr;
+
+		delete this_node;
+	}
+	else if (pFront != nullptr)
+	{
+		m_size--;
+		Node* this_node = pFront;
 		pFront = pFront->pNext;
 
-		delete pop_node;
-		return;
+		delete this_node;
 	}
 }
 
@@ -96,10 +99,10 @@ int Queue::_back()
 
 bool Queue::_empty()
 {
-	if (pFront == nullptr)
-		return true;
-	else
+	if (pFront != nullptr || pRear != nullptr)
 		return false;
+	else
+		return true;
 }
 
 size_t Queue::_size() const
@@ -109,7 +112,7 @@ size_t Queue::_size() const
 
 void Queue::_destroy()
 {
-	if (!_empty())
+	while (!_empty())
 	{
 		_pop();
 	}

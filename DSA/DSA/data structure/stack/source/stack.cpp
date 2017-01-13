@@ -6,7 +6,7 @@
 
 void stack_UnitTest()
 {
-	const size_t times = 1024*1024;
+	const size_t times = 1024 * 1024;
 	size_t index = 0;
 
 	std::vector<int> keyBase;
@@ -15,7 +15,7 @@ void stack_UnitTest()
 	while (index < times)
 	{
 		index++;
-		int key = rand() % 50;
+		int key = rand() % times;
 		
 		keyBase.push_back(key);
 		stack._push(key);
@@ -24,6 +24,8 @@ void stack_UnitTest()
 //	stack._display();
 
 	printf("After add nodes to the stack:\n");
+
+	ASSERT(stack._size() == keyBase.size());
 
 	while (!keyBase.empty())
 	{
@@ -36,6 +38,7 @@ void stack_UnitTest()
 	}
 
 	ASSERT(stack._empty());
+	ASSERT(stack._size() == keyBase.size());
 
 	printf("success!!!\n");
 	return;
@@ -44,18 +47,10 @@ void stack_UnitTest()
 void Stack::_push(const int i_key)
 {
 	Node* new_node = new Node(i_key);
-	
-	if (m_pTop == nullptr)
-	{
-		m_pTop = new_node;
-		new_node->pNext == nullptr;
-	}
-	else
-	{
-		Node* tmp_node = m_pTop;
-		m_pTop = new_node;
-		new_node->pNext = tmp_node;
-	}
+	m_size++;
+
+	new_node->pNext = m_pTop;
+	m_pTop = new_node;
 	return;
 }
 
@@ -65,26 +60,18 @@ void Stack::_pop()
 		return;
 	else
 	{
-		Node* pop_node = m_pTop;
+		m_size--;
+		Node* this_node = m_pTop;
 		m_pTop = m_pTop->pNext;
-		delete pop_node;
+		delete this_node;
+
 		return;
 	}
 }
 
 void Stack::_display()
 {
-	if (m_pTop == nullptr)
-		return;
-	else
-	{
-		Node* this_node = m_pTop;
-		while (this_node != nullptr)
-		{
-			printf("%d->", this_node->m_data);
-			this_node = this_node->pNext;
-		}
-	}
+
 }
 
 bool Stack::_empty() const
@@ -107,8 +94,11 @@ size_t Stack::_size() const
 
 void Stack::_destroy()
 {
-	while (!_empty())
+	if (m_pTop != nullptr)
 	{
-		_pop();
+		while (!_empty())
+		{
+			_pop();
+		}
 	}
 }
