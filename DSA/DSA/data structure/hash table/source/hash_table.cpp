@@ -20,7 +20,7 @@ void Hash_Table_UnitTest()
 
 		int foundObject = 0;
 
-		if (hashtable._find(item.getKey(), &foundObject))
+		if (!hashtable._find(item.getKey(), &foundObject))
 		{
 			hashtable._insert(item.getKey(), item.getObject());
 			keyBase.push_back(item);
@@ -30,6 +30,9 @@ void Hash_Table_UnitTest()
 	printf("After add nodes to the hashtable:\n");
 
 	ASSERT(static_cast<size_t>(keyBase.size()) == hashtable.getSize());
+
+
+
 
 	if (!keyBase.empty())
 	{
@@ -95,14 +98,13 @@ int HashTable::HashFunction(int i_key)
 
 bool HashTable::_insert(int i_key, int i_Object)
 {
-	if (m_TotalItems == m_size)
+	if (m_TotalItems >= m_size)
 		return false;
-
+	
 	int key = HashFunction(i_key);
 
 	while (m_table[key].getKey() != -1)
 	{
-//		printf("Collision\n");
 		key++;
 		key = HashFunction(key);
 	}
@@ -111,55 +113,54 @@ bool HashTable::_insert(int i_key, int i_Object)
 	m_table[key].setObject(i_Object);
 
 	m_TotalItems++;
-
 	return true;
 }
 
 bool HashTable::_delete(int i_key)
 {
-	int key = HashFunction(i_key);
-	int init_key = key;
+	int hash = HashFunction(i_key);
+	int initHash = hash;
 
-	while (m_table[key].getKey() != -1)
+	while (m_table[hash].getKey() != -1)
 	{
-		if (m_table[key].getKey() == i_key)
+		if (m_table[hash].getKey() == i_key)
 		{
-			m_table[key].setKey(-1);
 			m_TotalItems--;
+			m_table[hash].setKey(-1);
 			return true;
 		}
+		else
+		{
+			hash++;
+			hash = HashFunction(hash);
+		}
 
-		key++;
-		key = HashFunction(key);
-
-		if (key == init_key)
+		if (hash == initHash)
 			return false;
 	}
 	return false;
 }
 
-bool HashTable::_find(int i_key, int* i_pObject)
+bool HashTable::_find(int i_key, int * i_pObject)
 {
-	int key = HashFunction(i_key);
-	int init_key = key;
+	int hash = HashFunction(i_key);
+	int initHash = hash;
 
-	while (m_table[key].getKey() != -1)
+	while (m_table[hash].getKey() != -1)
 	{
-		if (m_table[key].getKey() == i_key)
+		if (m_table[hash].getKey() == i_key)
 		{
-			*i_pObject = m_table[key].getObject();
+			*i_pObject = m_table[hash].getObject();
 			return true;
 		}
-
-		key++;
-		key = HashFunction(key);
-
-		if (key == init_key)
+		else
 		{
-			return false;
+			hash++;
+			hash = HashFunction(hash);
 		}
+		if (hash == initHash)
+			return false;
 	}
-
 	return false;
 }
 

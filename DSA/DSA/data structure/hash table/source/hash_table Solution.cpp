@@ -84,7 +84,7 @@ public:
 		while (m_table[hash].getKey() != -1)
 		{
 			hash++;
-			hash = HashFunction(i_key);
+			hash = HashFunction(hash);
 		}
 
 		m_table[hash].setKey(i_key);

@@ -3,9 +3,8 @@
 #include <queue>
 #include <stack>
 
-Graph::Graph(int i_numVertex): m_numVertex(i_numVertex)
+Graph::Graph(int i_numVertex) : m_numVertex(i_numVertex)
 {
-	ASSERT(i_numVertex > 0);
 	adj = new std::list<int>[m_numVertex];
 }
 
@@ -22,7 +21,8 @@ void Graph::addEdge(int Vertex_1, int Vertex_2)
 {
 	ASSERT(Vertex_1 < m_numVertex);
 	ASSERT(Vertex_2 < m_numVertex);
-
+	ASSERT(adj != nullptr);
+	
 	adj[Vertex_1].push_back(Vertex_2);
 }
 
@@ -33,29 +33,28 @@ void Graph::destroy()
 
 void Graph::BFS(int i_Vertex)
 {
-	bool* visited = new bool[m_numVertex];
+	ASSERT(adj != nullptr);
 
+	bool* visited = new bool[m_numVertex];
 	for (size_t i = 0; i < m_numVertex; i++)
 		visited[i] = false;
 
 	std::queue<int> searchQueue;
-
-	visited[i_Vertex] = true;
 	searchQueue.push(i_Vertex);
+	
+	visited[i_Vertex] = true;
 
 	while (!searchQueue.empty())
 	{
-		int currentVertex = searchQueue.front();
-		printf("%d  ", currentVertex);
-
+		int current_vertex = searchQueue.front();
 		searchQueue.pop();
 
-		for (std::list<int>::iterator i = adj[currentVertex].begin(); i != adj[currentVertex].end(); i++)
+		for (std::list<int>::iterator i = adj[current_vertex].begin(); i != adj[current_vertex].end(); i++)
 		{
 			if (visited[*i] == false)
 			{
-				visited[*i] = true;
 				searchQueue.push(*i);
+				visited[*i] = true;
 			}
 		}
 	}
@@ -64,32 +63,32 @@ void Graph::BFS(int i_Vertex)
 
 void Graph::DFS(int i_Vertex)
 {
-	bool* visited = new bool[m_numVertex];
+	ASSERT(adj != nullptr);
 
+	bool* visited = new bool[m_numVertex];
 	for (size_t i = 0; i < m_numVertex; i++)
 		visited[i] = false;
 
 	std::stack<int> searchStack;
-
-	visited[i_Vertex] = true;
 	searchStack.push(i_Vertex);
 
 	while (!searchStack.empty())
 	{
-		int currentVertex = searchStack.top();
+		int current_vertex = searchStack.top();
 		searchStack.pop();
 
-		if(visited[currentVertex] == false)
-			visited[currentVertex] = true;
+		if (visited[current_vertex] == false)
+		{
+			visited[current_vertex] = true;
+		}
 
-		for (std::list<int>::iterator i = adj[currentVertex].begin(); i != adj[currentVertex].end(); i++)
+		for (std::list<int>::iterator i = adj[current_vertex].begin(); i != adj[current_vertex].end(); i++)
 		{
 			if (visited[*i] == false)
 			{
 				searchStack.push(*i);
 			}
 		}
-
 	}
 	delete[] visited;
 }

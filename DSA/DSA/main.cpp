@@ -22,7 +22,7 @@ int main(int argc, const char *argv[])
 
 //	List_UnitTest();
 //	stack_UnitTest();
-	queue_UnitTest();
+//	queue_UnitTest();
 //	Hash_Table_UnitTest();
 //	HashTable<int> hashTable(20);
 //	binarytree_UnitTest();
@@ -44,7 +44,7 @@ int main(int argc, const char *argv[])
 //	printf_array(array, 10);
 //	Sort_UnitTest();
 
-	/*
+	
 	Graph graph(5);
 
 	graph.addEdge(1, 0);
@@ -52,9 +52,10 @@ int main(int argc, const char *argv[])
 	graph.addEdge(2, 1);
 	graph.addEdge(0, 3);
 	graph.addEdge(1, 4);
+	graph.BFS(0);
 	graph.DFS(0);
 	graph.destroy();
-	*/
+	
 
 	printf("Memory Leak? %d\n", _CrtDumpMemoryLeaks());
 
