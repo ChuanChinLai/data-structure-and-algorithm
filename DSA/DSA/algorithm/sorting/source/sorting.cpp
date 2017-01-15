@@ -20,7 +20,7 @@ void printf_array(const int * i_pArray, const size_t i_size)
 
 void Sort_UnitTest()
 {
-	const size_t times = 1024 * 32;
+	const size_t times = 1024;
 	size_t index = 0;
 
 	std::vector<int> keyBase;
@@ -110,49 +110,58 @@ void Sort_UnitTest()
 
 void bubble_sort(int * i_pArray, const size_t i_size)
 {
+	ASSERT(i_pArray);
+
 	for (size_t i = 0; i < i_size; i++)
 	{
 		for (size_t j = i + 1; j < i_size; j++)
 		{
 			if (i_pArray[i] > i_pArray[j])
-			{ 
 				std::swap(i_pArray[i], i_pArray[j]);
-			}
 		}
 	}
+
 }
 
 void selection_sort(int * i_pArray, const size_t i_size)
 {
+	ASSERT(i_pArray);
+
 	for (size_t i = 0; i < i_size; i++)
 	{
-		int index_min = i;
+		int min_index = i;
 
 		for (size_t j = i + 1; j < i_size; j++)
 		{
-			if (i_pArray[j] < i_pArray[index_min])
-				index_min = j;
+			if (i_pArray[min_index] >= i_pArray[j])
+				min_index = j;
 		}
-
-		std::swap(i_pArray[i], i_pArray[index_min]);
+		if(i_pArray[i] > i_pArray[min_index])
+			std::swap(i_pArray[i], i_pArray[min_index]);
 	}
 }
 
 void insertion_sort(int * i_pArray, const size_t i_size)
 {
+	ASSERT(i_pArray);
+
 	for (size_t i = 1; i < i_size; i++)
 	{
-		int current_index = i;
 		int tmp = i_pArray[i];
+		int index = i;
 
-		while (current_index > 0 && i_pArray[current_index - 1] > tmp)
+		while (index > 0 && i_pArray[index - 1] > tmp)
 		{
-			i_pArray[current_index] = i_pArray[current_index - 1];
-			current_index--;
+			i_pArray[index] = i_pArray[index - 1];
+			index--;
 		}
-		i_pArray[current_index] = tmp;
+		i_pArray[index] = tmp;
 	}
 }
+
+
+
+
 
 void merge_sort(int * i_pArray, const size_t lower_index, const size_t upper_index)
 {

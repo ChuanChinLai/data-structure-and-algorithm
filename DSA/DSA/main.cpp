@@ -32,7 +32,7 @@ int main(int argc, const char *argv[])
 
 //	bubble_sort(array, 10);
 //	selection_sort(array, 10);
-//	insertion_sort(array, 10);
+	insertion_sort(array, 10);
 //	printf_array(array, 10);
 //	merge_sort(array, 0, 10-1);
 
@@ -42,7 +42,7 @@ int main(int argc, const char *argv[])
 //	printf_array(array, 10);
 //	quick_sort(array, 0, 10 - 1);
 //	printf_array(array, 10);
-//	Sort_UnitTest();
+	Sort_UnitTest();
 
 	
 	Graph graph(5);
