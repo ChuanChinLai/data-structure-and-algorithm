@@ -1,64 +1,67 @@
-#include "..\heap.h"
+﻿#include "..\heap.h"
 
 void Heap::_push(int i_key)
 {
 	m_heap.push_back(i_key);
 
-	int index = static_cast<int>(m_heap.size() - 1);
-	int index_parent = (index - 1) / 2;
+	int index = m_heap.size() - 1;
+	int parent_index = (index - 1) / 2;
 
-	while (index > 0 && m_heap[index_parent] <= i_key)
+	while (index !=  0 && m_heap[index] > m_heap[parent_index])
 	{
-		m_heap[index] = m_heap[index_parent];
-		index = index_parent;
-		index_parent = (index - 1) / 2;
+
+		m_heap[index] = m_heap[parent_index];
+		m_heap[parent_index] = i_key;
+
+		index = parent_index;
+		parent_index = (parent_index - 1) / 2;
 	}
-	
-	m_heap[index] = i_key;
 }
 
 void Heap::_pop()
 {
-	int index = 0;
-	int tmp = m_heap.back();
-	m_heap[index] = tmp;
-	m_heap.pop_back();
-
-	int index_parent = 0;
-	int debug = 0;
+	int current_index = 0;
 	int index_L = 0;
 	int index_R = 0;
 
-	while (index < static_cast<int>(m_heap.size() / 2))
+	int tmp = m_heap.back();
+	m_heap[0] = tmp;
+	m_heap.pop_back();
+
+
+	while (current_index < m_heap.size() / 2)
 	{
-		debug = index;
-		index_L = index * 2 + 1;
+		index_L = 2 * current_index + 1;
 		index_R = index_L + 1;
 
-		if (index_R < m_heap.size() && m_heap[index_R] > m_heap[index_L])
+		if (index_R < m_heap.size() && m_heap[index_L] < m_heap[index_R])
 		{
-			index = index_R;
+			if (m_heap[index_R] < tmp)
+			{
+				break;
+			}
+			else
+			{
+				m_heap[current_index] = m_heap[index_R];
+				current_index = index_R;
+			}
 		}
 		else
 		{
-			index = index_L;
+			if (m_heap[index_L] < tmp)
+			{
+				break;
+			}
+			else
+			{
+				m_heap[current_index] = m_heap[index_L];
+				current_index = index_L;
+			}
 		}
-
-		if (m_heap[index] <= tmp)
-		{
-			break;
-		}
-
-		m_heap[index_parent] = m_heap[index];
-		index_parent = index;
 	}
 
-	if (!m_heap.empty())
-	{
-//		printf("%d  %d\n", index_parent, debug);
-		m_heap[index_parent] = tmp;
-	}
-
+	if(!m_heap.empty())
+		m_heap[current_index] = tmp;
 }
 
 int Heap::_peek() const

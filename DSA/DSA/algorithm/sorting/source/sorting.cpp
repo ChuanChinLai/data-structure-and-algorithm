@@ -20,7 +20,7 @@ void printf_array(const int * i_pArray, const size_t i_size)
 
 void Sort_UnitTest()
 {
-	const size_t times = 1024;
+	const size_t times = 1024 * 32;
 	size_t index = 0;
 
 	std::vector<int> keyBase;
@@ -159,79 +159,6 @@ void insertion_sort(int * i_pArray, const size_t i_size)
 	}
 }
 
-
-
-
-
-void merge_sort(int * i_pArray, const size_t lower_index, const size_t upper_index)
-{
-	if (lower_index >= upper_index)
-		return;
-
-	int mid_index = (lower_index + upper_index) / 2;
-
-	merge_sort(i_pArray, lower_index, mid_index);
-	merge_sort(i_pArray, mid_index + 1, upper_index);
-	
-	merge(i_pArray, lower_index, mid_index, upper_index);
-}
-
-void merge(int * i_pArray, int lower_index, int mid_index, int upper_index)
-{
-	int size_L = mid_index - lower_index + 1;
-	int size_R = upper_index - mid_index;
-
-	int* Array_L = new int[size_L];
-	int* Array_R = new int[size_R];
-
-	for (int i = 0; i < size_L; i++)
-	{
-		Array_L[i] = i_pArray[lower_index + i];
-	}
-
-	for (int i = 0; i < size_R; i++)
-	{
-		Array_R[i] = i_pArray[mid_index + 1 + i];
-	}
-
-	int index_L = 0;
-	int index_R = 0;
-	int index_current = lower_index;
-
-	while (index_L < size_L && index_R < size_R)
-	{
-		if (Array_L[index_L] < Array_R[index_R])
-		{
-			i_pArray[index_current] = Array_L[index_L];
-			index_L++;
-		}
-		else
-		{
-			i_pArray[index_current] = Array_R[index_R];
-			index_R++;
-		}
-		index_current++;
-	}
-
-
-	while (index_L < size_L)
-	{
-		i_pArray[index_current] = Array_L[index_L];
-		index_current++;
-		index_L++;
-	}
-
-	while (index_R < size_R)
-	{
-		i_pArray[index_current] = Array_R[index_R];
-		index_current++;
-		index_R++;
-	}
-
-	delete[] Array_L;
-	delete[] Array_R;
-}
-
 void heap_sort(int * i_pArray, const size_t i_size)
 {
 	Heap heap;
@@ -249,41 +176,111 @@ void heap_sort(int * i_pArray, const size_t i_size)
 	//	printf_array(i_pArray, i_size);
 }
 
-void quick_sort(int* i_pArray, int index_L, int index_R)
+void merge_sort(int * i_pArray, const size_t lower_index, const size_t upper_index)
 {
-	if (index_L >= index_R)
+	ASSERT(i_pArray);
+
+	if (lower_index >= upper_index)
 		return;
 
-	int pivot = partition(i_pArray, index_L, index_R, i_pArray[index_R]);
+	int mid = (lower_index + upper_index) / 2;
 
-	quick_sort(i_pArray, index_L, pivot - 1);
-	quick_sort(i_pArray, pivot + 1, index_R);
+	merge_sort(i_pArray, lower_index, mid);
+	merge_sort(i_pArray, mid + 1, upper_index);
+
+	merge(i_pArray, lower_index, mid, upper_index);
 }
 
-int partition(int* i_pArray, int index_L, int index_R, int i_pivot)
+void merge(int * i_pArray, int lower_index, int mid_index, int upper_index)
 {
-	int current_index_L = index_L;
-	int current_index_R = index_R - 1;
+	int size_L = mid_index - lower_index + 1;
+	int size_R = upper_index - mid_index;
+
+	int* array_L = new int[size_L];
+	int* array_R = new int[size_R];
+
+	for (size_t i = 0; i < size_L; i++)
+		array_L[i] = i_pArray[lower_index + i];
+
+	for (size_t i = 0; i < size_R; i++)
+		array_R[i] = i_pArray[mid_index + 1 + i];
+
+	int index_L = 0;
+	int index_R = 0;
+	int current_index = lower_index;
+
+	while (index_L < size_L && index_R < size_R)
+	{
+		if (array_L[index_L] <= array_R[index_R])
+		{
+			i_pArray[current_index] = array_L[index_L];
+			index_L++;
+		}
+		else
+		{
+			i_pArray[current_index] = array_R[index_R];
+			index_R++;
+		}
+		current_index++;
+	}
+
+
+	while (index_L < size_L)
+	{
+		i_pArray[current_index] = array_L[index_L];
+		index_L++;
+		current_index++;
+	}
+
+	while (index_R < size_R)
+	{
+		i_pArray[current_index] = array_R[index_R];
+		index_R++;
+		current_index++;
+	}
+
+	delete[] array_L;
+	delete[] array_R;
+}
+
+void quick_sort(int * i_pArray, int index_L, int index_R)
+{
+	ASSERT(i_pArray);
+	if (index_L >= index_R)
+		return;
+	
+	int mid = partition(i_pArray, index_L, index_R, i_pArray[index_R]);
+
+	quick_sort(i_pArray, index_L, mid - 1);
+	quick_sort(i_pArray, mid + 1, index_R);
+}
+
+int partition(int * i_pArray, int index_L, int index_R, int i_pivot)
+{
+	int current_L = index_L;
+	int current_R = index_R - 1;
 
 	while (1)
 	{
-		while (i_pArray[current_index_L] < i_pivot)
+		while (i_pArray[current_L] < i_pivot)
 		{
-			current_index_L++;
+			current_L++;
 		}
 
-		while (current_index_R > 0 && i_pArray[current_index_R] >= i_pivot)
+		while (current_R > 0 && i_pArray[current_R] >= i_pivot)
 		{
-			current_index_R--;
+			current_R--;
 		}
 
-		if (current_index_L >= current_index_R)
+		if (current_L >= current_R)
 			break;
 
-		std::swap(i_pArray[current_index_L], i_pArray[current_index_R]);
+
+		if (i_pArray[current_L] > i_pArray[current_R])
+			std::swap(i_pArray[current_L], i_pArray[current_R]);
 	}
 
-	std::swap(i_pArray[current_index_L], i_pArray[index_R]);
-
-	return current_index_L;
+	std::swap(i_pArray[current_L], i_pArray[index_R]);
+	return current_L;
 }
+
