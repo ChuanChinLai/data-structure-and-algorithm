@@ -25,14 +25,15 @@ int main(int argc, const char *argv[])
 //	queue_UnitTest();
 //	Hash_Table_UnitTest();
 //	HashTable<int> hashTable(20);
-//	binarytree_UnitTest();
+
+	binarytree_UnitTest();
 
 	int array[10] = {80, 64, 99, 76, 5, 5, 28, 80, 1, 3};
 //	int array[10] = { 80, 3, 3, 3, 3, 3, 3, 3, 1, 3 };
 
 //	bubble_sort(array, 10);
 //	selection_sort(array, 10);
-	insertion_sort(array, 10);
+//	insertion_sort(array, 10);
 //	printf_array(array, 10);
 //	merge_sort(array, 0, 10-1);
 
@@ -42,7 +43,7 @@ int main(int argc, const char *argv[])
 //	printf_array(array, 10);
 //	quick_sort(array, 0, 10 - 1);
 //	printf_array(array, 10);
-	Sort_UnitTest();
+//	Sort_UnitTest();
 
 	
 	Graph graph(5);
